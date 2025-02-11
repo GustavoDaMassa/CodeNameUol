@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listagem dos Jogadores</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-5">Listagem de Jogadores</h1>
+        <table class="table table-striped mt-3">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Codinome</th>
+                <th>Grupo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="jogador : ${jogadores}">
+                <td th:text="${jogador.nome}"></td>
+                <td th:text="${jogador.email}"></td>
+                <td th:text="${jogador.telefone}"></td>
+                <td th:text="${jogador.codinome}"></td>
+                <td th:text="${jogador.grupo.nome}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <a th:href="@{cadastro-jogador}" class="btn btn-primary">Novo Jogador</a>
+        </div>
+    </div>
+
+</body>
+</html>

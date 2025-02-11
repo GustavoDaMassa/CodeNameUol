@@ -24,11 +24,14 @@ public class JogadorService {
 
         var novoJogador = new Jogador(jogador.nome(),jogador.email(),jogador.telefone(),novoCodinome,jogador.grupo());
 
-        return jogadorRepository.salvar(jogador);
+        return jogadorRepository.salvarJogador(novoJogador);
     }
 
     public List<String> listarCodinomesEmUso(GrupoCodinome grupoCodinome) {
-        return jogadorRepository.listarJogadoresPelogGrupo(grupoCodinome);
+        return jogadorRepository.listarJogadoresPeloGrupo(grupoCodinome);
     }
 
+    public List<Jogador> listarJogador(){
+        return jogadorRepository.mostrarJogadores();
+    }
 }
