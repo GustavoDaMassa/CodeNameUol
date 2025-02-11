@@ -1,3 +1,14 @@
 2025-02-11 11:37:04.049236-03:00 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "show TABLES[*]:"; SQL statement:
 show TABLES: [42000-232]
+2025-02-11 14:14:07.789534-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM JOGADORES"; expected "identifier"; SQL statement:
+DELETE * FROM JOGADORES [42001-232]
+2025-02-11 14:14:56.192405-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE  FROM JOGADORES where id=1[*]JOGADORES"; SQL statement:
+DELETE  FROM JOGADORES where id=1JOGADORES [42000-232]
+2025-02-11 14:21:37.768891-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE FROM JOGADORES WHERE ID=5\000d\000a\000d\000a[*]SELECT * FROM JOGADORES"; SQL statement:
+DELETE FROM JOGADORES WHERE ID=5
+
+SELECT * FROM JOGADORES [42000-232]

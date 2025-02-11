@@ -1,7 +1,6 @@
 package com.gustavohenrique.codiNomeUol.service;
 
 import com.gustavohenrique.codiNomeUol.model.GrupoCodinome;
-import com.gustavohenrique.codiNomeUol.repository.CodinomeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,14 +24,12 @@ public class CodinomeService {
     public List<String> listarCodinosmesDisponiveis(GrupoCodinome grupoCodinome, List<String> codinomesEmUso) throws Exception{
         var codinomes = buscarCodinomes(grupoCodinome);
 
-        var codinomesDisponiveis = codinomes.stream().filter(codinome -> !codinomesEmUso.contains(codinomes)).toList();
-
-        return codinomesDisponiveis;
+        return codinomes.stream().filter(codinome -> !codinomesEmUso.contains(codinomes)).toList();
     }
 
     public List<String> buscarCodinomes(GrupoCodinome grupoCodinome) throws Exception{
         var codinomeRepository = codinomesRepositoryFactory.create(grupoCodinome);
-        return codinomeRepository.buscarCodinomes();
+        return codinomeRepository.buscarCodinomes().getCodinomes();
     }
 
     private String sortearCodinome(List<String> codinomesDisponiveis){

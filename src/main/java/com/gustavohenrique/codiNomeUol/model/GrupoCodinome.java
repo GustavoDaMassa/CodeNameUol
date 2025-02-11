@@ -1,8 +1,8 @@
 package com.gustavohenrique.codiNomeUol.model;
 
 public enum GrupoCodinome {
-    VINGADORES("Vingadores" , ""),
-    LIGA_DA_JUSTICA("Liga da Justiça", "");
+    VINGADORES("Vingadores" , "https://raw.githubusercontent.com/uolhost/test-backEnd-Java/master/referencias/vingadores.json"),
+    LIGA_DA_JUSTICA("Liga da Justiça", "https://raw.githubusercontent.com/uolhost/test-backEnd-Java/master/referencias/liga_da_justica.xml");
 
     private final String nome;
     private  final String uri;

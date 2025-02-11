@@ -30,7 +30,7 @@ public class CadastroJogadorController {
     @PostMapping
     public String cadastrarJogador(@ModelAttribute Jogador jogador){
         try {
-            jogadorService.cadastrarJogador(jogador);
+            var novoJogador = jogadorService.cadastrarJogador(jogador);
             return "redirect:cadastro-jogador";
         } catch (Exception e) {
             return "redirect:cadastro-jogador";
