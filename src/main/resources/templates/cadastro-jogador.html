@@ -13,10 +13,13 @@
             <div>
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" th:field="*{nome}" required>
+                <div th:if="${#fields.hasErrors('nome')}" th:erros="*{nome}">Nome obrigatório</div>
             </div>
             <div>
                 <label for="email">Email:</label>
                 <input type="text" id="email" th:field="*{email}" required>
+                <div th:if="${#fields.hasErrors('email')}" th:erros="*{email}">E-mail inválido</div>
+
             </div>
             <div>
                 <label for="telefone">Telefone:</label>
@@ -27,6 +30,8 @@
                 <div th:each="grupo: ${grupo}">
                     <input type="radio" th:field="*{grupo}" th:value="${grupo.name()}" th:id="${grupo.name()}" required>
                     <label th:for="${grupo.name()}" th:text="${grupo.getNome()}"></label>
+                    <div th:if="${#fields.hasErrors('grupo')}" th:erros="*{grupo}">Você deve selecionar um grupo </div>
+
 
                 </div>
             </div>
