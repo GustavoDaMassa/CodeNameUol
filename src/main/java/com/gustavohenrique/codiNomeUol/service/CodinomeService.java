@@ -1,5 +1,6 @@
 package com.gustavohenrique.codiNomeUol.service;
 
+import com.gustavohenrique.codiNomeUol.exception.GrupoCodinomeIndisponivelException;
 import com.gustavohenrique.codiNomeUol.model.GrupoCodinome;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class CodinomeService {
 
     public String gerarCodinome(GrupoCodinome grupoCodinome, List<String> codinomesEmUso) throws Exception{
         var codinomesDisponiveis = listarCodinosmesDisponiveis(grupoCodinome,codinomesEmUso);
-        if(codinomesDisponiveis.isEmpty()) throw new Exception("Não há codinomes disponíveis para o grupo" + grupoCodinome.getNome());
+        if(codinomesDisponiveis.isEmpty()) throw new GrupoCodinomeIndisponivelException();
 
         return sortearCodinome(codinomesDisponiveis);
     }

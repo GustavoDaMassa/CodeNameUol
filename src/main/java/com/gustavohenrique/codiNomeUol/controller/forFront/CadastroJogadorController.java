@@ -1,5 +1,6 @@
 package com.gustavohenrique.codiNomeUol.controller.forFront;
 
+import com.gustavohenrique.codiNomeUol.exception.GrupoCodinomeIndisponivelException;
 import com.gustavohenrique.codiNomeUol.model.GrupoCodinome;
 import com.gustavohenrique.codiNomeUol.model.Jogador;
 import com.gustavohenrique.codiNomeUol.service.JogadorService;
@@ -30,8 +31,14 @@ public class CadastroJogadorController {
     @PostMapping
     public String cadastrarJogador(@ModelAttribute @Valid Jogador jogador, BindingResult result, Model model) throws Exception {
         if(result.hasErrors())return getViewAndModel(model,jogador);
-        var novoJogador = jogadorService.cadastrarJogador(jogador);
-            return "redirect:cadastro-jogador";
+        try {
+            var novoJogador = jogadorService.cadastrarJogador(jogador);
+            return "redirect:listagem-jogadores";
+        }catch (GrupoCodinomeIndisponivelException e){
+            result.rejectValue("grupo","grupoCodinomeIndisponivel", e.getMessage());
+            return getViewAndModel(model,jogador);
+        }
+
     }
 
     private String getViewAndModel(Model model, Jogador jogador) {
