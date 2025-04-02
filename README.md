@@ -6,13 +6,14 @@
 </h2>
 
 <p align="center">
-  <img src="LogoCodinomeUOL.png" alt="Descrição da Imagem">
+  <img src="images/imglogo.png" alt="Descrição da Imagem">
 </p>
 
 
+
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=Youtube&message=gustavo.pereira@discente.ufg.br&color=000000&labelColor=000000" alt="gustavo.pereira@discente.ufg.br" />
- <img src="https://img.shields.io/static/v1?label=Tipo&message=Desafio&color=000000&labelColor=000000" alt="Desafio" />
+ <img src="https://img.shields.io/static/v1?label=Youtube&message=gustavo.pereira@discente.ufg.br&color=FFFFFF&labelColor=000000" alt="gustavo.pereira@discente.ufg.br" />
+ <img src="https://img.shields.io/static/v1?label=Tipo&message=Desafio&color=FFFFFF&labelColor=000000" alt="Desafio" />
 </p>
 
 Esse projeto demonstra a resolução desse [desafio](https://github.com/uolhost/test-backEnd-Java.git) que propõe a criação de um sistema de cadastro de jogadores.
@@ -29,13 +30,13 @@ Essa aplicação faz a geração aleatória de codinomes de acordo com o grupo s
 
 ## API 
 
+### /listagem-jogadores
+
+![telaListagem.png](images/telaListagem.png)
 ### /cadastro-jogador
 
 ![telaCadastro.png](images/telaCadastro.png)
 
-### /listagem-jogadores
-
-![telaListagem.png](images/telaListagem.png)
 
 ## Arquitetura
 
