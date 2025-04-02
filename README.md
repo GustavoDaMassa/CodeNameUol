@@ -1,5 +1,5 @@
 <h1 align="center">
-    Codiname UOL
+    Codinome UOL
 </h1>
 <h2 align="center">
     sistema de cadastro de jogadores
